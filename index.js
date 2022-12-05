@@ -1,7 +1,12 @@
-let myLibrary = [];
+let myLibrary = ['ghost', 'animal', 'lolol'];
+let book = document.getElementById('book');
 
-
-
+let bookLoop = function(){
+    for(i = 0; i < myLibrary.length; i++){
+       book.innerHTML = myLibrary
+    }
+}
+bookLoop()
 
 
 
