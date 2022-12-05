@@ -12,27 +12,31 @@
 <body>
 <header>
     <div class="library">Library</div>
-    <button class="log-in">Log in</button>
+    <button class="add-book" onclick="addBook()">Add Book</button>
 </header>
 
 <div class="container">
-<div class="book-container">
-    <div id="book1">
 
+    <div class="add-book-form" id="book-form">
+    <form action="lalala" id="form-container"> 
+        <label for="book-name"></label>
+        <input type="text" name="name" placeholder="Title" required>
 
-    </div>
+        <label for="book-author"></label>
+        <input type="text" name="author" placeholder="Author" required>
 
-    <div id="book2">
+        <label for="pages-read"></label>
+        <input type="number" name="pages" maxlength="2000" placeholder="Pages" required> 
 
+        <label for="finished"></label>
+        <input type="text" name="read" placeholder="tick" required> 
 
-    </div>
-    
-    <div id="book3">
-
-
-    </div>
-</div> 
+        <button type="submit" class="btn">Add Book</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+    </form>
 </div>
-    
+
+</div>
+
 </body>
 </html>
