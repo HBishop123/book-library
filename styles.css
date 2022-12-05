@@ -27,9 +27,26 @@ justify-content: center;
 }
 
 .book-container{
-    width: 40vw;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+border: 1px solid black;
+display: grid;
+grid-template-columns: repeat(03, 1fr);
 }
 
+
+/* style regarding the form */
+
+.add-book{
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-book-form{
+    background-color: grey;
+    height: auto;
+    width: min-content;
+    padding: 15px;
+    display: none;
+}
