@@ -49,10 +49,10 @@ bookNumber = 0;
 function addBook(){
     let form = document.getElementById('book-form')
 
-    if ((form.style.display = "hidden") && (number == 0)){
+    if ((form.style.display = "hidden") && (bookNumber == 0)){
         form.style.display = "block"
         bookNumber++
-    }else if(number > 0){
+    }else if(bookNumber > 0){
         form.style.display = "none"
         bookNumber = 0
     }
