@@ -1,9 +1,36 @@
 let myLibrary = [];
-let book = document.getElementById('book-container');
+let book = document.getElementById('books');
+let bookCard = document.getElementById('container')
 
 let bookLoop = function(){
     for(i = 0; i < myLibrary.length; i++){
-      book.innerHTML = libraryChanged
+        let getBooksInOrder = myLibrary[i];
+
+        const card = document.createElement('div');
+        bookCard.appendChild(card);
+        card.style.height = "400px"
+        card.style.width = "400px"
+        card.style.border = "1px solid black"
+        
+        const words = document.createElement('p');
+        card.appendChild(words)
+        
+
+        bookTitle = getBooksInOrder.title;
+        bookAuthor = getBooksInOrder.author;
+        pagesRead = getBooksInOrder.pages;
+        bookFinished = getBooksInOrder.read
+        
+        words.innerHTML = bookTitle
+
+
+        
+        console.log(bookTitle)
+        console.log(bookAuthor)
+        console.log(pagesRead)
+        console.log(bookFinished)
+        
+    
     }
 }
 
@@ -29,13 +56,19 @@ function addBookToLibrary() {}
 
 
 
-// let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
-// myLibrary.push(firstBook)
+let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
+myLibrary.push(firstBook)
 
-// let secondBook = new Book('Gulag', 'solcheniztyn', 200, true )
-// myLibrary.push(secondBook)
 
-// bookLoop()
+let secondBook = new Book('Gulag', 'solcheniztyn', 200, true )
+myLibrary.push(secondBook)
+
+
+bookLoop()
+
+
+
+
 
 
 
