@@ -24,6 +24,7 @@ height: 80vh;
 display: flex;
 align-items: center;
 justify-content: center;
+gap: 20px;
 }
 
 .book-container{
@@ -49,4 +50,5 @@ grid-template-columns: repeat(03, 1fr);
     width: min-content;
     padding: 15px;
     display: none;
+    position: absolute;
 }
