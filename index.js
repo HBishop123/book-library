@@ -2,9 +2,27 @@ let myLibrary = [];
 let book = document.getElementById('books');
 let bookCard = document.getElementById('container')
 
+
+//constructor
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+
+}
+
 let bookLoop = function(){
     for(i = 0; i < myLibrary.length; i++){
         let getBooksInOrder = myLibrary[i];
+
+        bookTitle = getBooksInOrder.title;
+        bookAuthor = getBooksInOrder.author;
+        pagesOfBookRead = getBooksInOrder.pages;
+        bookFinished = getBooksInOrder.read
 
         const card = document.createElement('div');
         bookCard.appendChild(card);
@@ -12,40 +30,29 @@ let bookLoop = function(){
         card.style.width = "400px"
         card.style.border = "1px solid black"
         
-        const words = document.createElement('p');
-        card.appendChild(words)
-        
+        const wordTitle = document.createElement('p');
+        card.appendChild(wordTitle)
 
-        bookTitle = getBooksInOrder.title;
-        bookAuthor = getBooksInOrder.author;
-        pagesRead = getBooksInOrder.pages;
-        bookFinished = getBooksInOrder.read
+        const wordAuthor = document.createElement('p');
+        card.appendChild(wordAuthor)
         
-        words.innerHTML = bookTitle
-
-
+        const wordPages = document.createElement('p');
+        card.appendChild(wordPages)
         
-        console.log(bookTitle)
-        console.log(bookAuthor)
-        console.log(pagesRead)
-        console.log(bookFinished)
+        const wordRead = document.createElement('p');
+        card.appendChild(wordRead)
+
+        wordTitle.innerHTML = bookTitle;
+        wordAuthor.innerHTML = bookAuthor;
+        wordPages.innerHTML = pagesOfBookRead;
+        wordRead.innerHTML = bookFinished
+        
         
     
     }
 }
 
 
-//constructor
-class Book {
-    constructor(title, author, pages, read){
-        this.title = title;
-        this.author = author;
-        this.pages = 0;
-        this.read = false;
-    }
-
-
-}
 
 
 function addBookToLibrary() {}
@@ -60,8 +67,10 @@ let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
 myLibrary.push(firstBook)
 
 
-let secondBook = new Book('Gulag', 'solcheniztyn', 200, true )
+let secondBook = new Book('Gulag', 'solcheniztyn', 200, true)
 myLibrary.push(secondBook)
+
+
 
 
 bookLoop()
