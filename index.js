@@ -46,8 +46,9 @@ function addBookToLibrary() {}
 
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
 bookNumber = 0;
+let form = document.getElementById('book-form')
 function addBook(){
-    let form = document.getElementById('book-form')
+    
 
     if ((form.style.display = "hidden") && (bookNumber == 0)){
         form.style.display = "block"
@@ -56,6 +57,11 @@ function addBook(){
         form.style.display = "none"
         bookNumber = 0
     }
+}
+
+function closeForm(){
+    form.style.display = "none";
+    bookNumber = 0;
 }
     
 
