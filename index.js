@@ -1,12 +1,12 @@
-let myLibrary = ['ghost', 'animal', 'lolol'];
-let book = document.getElementById('book');
+let myLibrary = [];
+let book = document.getElementById('book1');
 
 let bookLoop = function(){
     for(i = 0; i < myLibrary.length; i++){
        book.innerHTML = myLibrary
     }
 }
-bookLoop()
+
 
 
 
@@ -21,6 +21,12 @@ class Book {
 
 }
 
-function addBookoLibrary() {
+let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
+myLibrary.push(firstBook)
+console.log(firstBook)
+console.log(myLibrary)
 
-}
+
+bookLoop()
+
+function addBookoLibrary() {}
