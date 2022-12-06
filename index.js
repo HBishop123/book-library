@@ -27,7 +27,6 @@ let bookLoop = function(){
         const card = document.createElement('div');
         bookCard.appendChild(card);
         card.style.height = "200px"
-        
         card.style.border = "1px solid black"
         card.style.display = "flex"
         card.style.flexDirection = "column"
@@ -90,6 +89,8 @@ myLibrary.push(secondBook)
 
 let f2hBook = new Book('Gulag', 'solcheniztyn', 200, true)
 myLibrary.push(secondBook)
+
+
 
 
 
