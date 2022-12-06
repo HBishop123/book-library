@@ -1,6 +1,6 @@
 let myLibrary = [];
 let book = document.getElementById('books');
-let bookCard = document.getElementById('container')
+let bookCard = document.getElementById('book-container')
 
 
 //constructor
@@ -26,9 +26,14 @@ let bookLoop = function(){
 
         const card = document.createElement('div');
         bookCard.appendChild(card);
-        card.style.height = "400px"
-        card.style.width = "400px"
+        card.style.height = "200px"
+        
         card.style.border = "1px solid black"
+        card.style.display = "flex"
+        card.style.flexDirection = "column"
+        card.style.alignItems = "center"
+        card.style.justifyContent = "space-around"
+        
         
         const wordTitle = document.createElement('p');
         card.appendChild(wordTitle)
@@ -69,6 +74,23 @@ myLibrary.push(firstBook)
 
 let secondBook = new Book('Gulag', 'solcheniztyn', 200, true)
 myLibrary.push(secondBook)
+
+
+let thirdBook = new Book('Gulag', 'solcheniztyn', 200, true)
+myLibrary.push(secondBook)
+
+
+let fourthBook = new Book('Gulag', 'solcheniztyn', 200, true)
+myLibrary.push(secondBook)
+
+
+let f1hBook = new Book('Gulag', 'solcheniztyn', 200, true)
+myLibrary.push(secondBook)
+
+
+let f2hBook = new Book('Gulag', 'solcheniztyn', 200, true)
+myLibrary.push(secondBook)
+
 
 
 
