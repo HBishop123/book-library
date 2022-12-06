@@ -1,5 +1,5 @@
 let myLibrary = [];
-let book = document.getElementById('books');
+
 let bookCard = document.getElementById('book-container')
 
 
@@ -92,11 +92,11 @@ bookLoop()
 
 
 
+// random color generator
+const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
 
 //JS for the form
-
-
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
 bookNumber = 0;
 let form = document.getElementById('book-form')
@@ -106,18 +106,23 @@ function addBook(){
     if ((form.style.display = "hidden") && (bookNumber == 0)){
         form.style.display = "block"
         bookNumber++
+        
+
     }else if(bookNumber > 0){
         form.style.display = "none"
         bookNumber = 0
+        document.body.style.backgroundColor = "white"
     }
 }
 
 function closeForm(){
     form.style.display = "none";
     bookNumber = 0;
+    document.body.style.backgroundColor = "white"
 }
     
 document.getElementById('click-container').addEventListener("click", function(){
     form.style.display = "none";
     bookNumber = 0;
+    document.body.style.backgroundColor = "white"
 })
