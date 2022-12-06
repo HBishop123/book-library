@@ -12,7 +12,7 @@
 <body>
 <header>
     <div class="library">Library</div>
-    <button class="add-book" onclick="addBook()">Add Book</button>
+    <button class="add-book" onclick="addBookPopup()">Add Book</button>
 </header>
 
 <div id="container" class="container">
@@ -24,32 +24,37 @@
 <div id="click-container"></div>
    
 
-
+<!-- cannot do form names with spaces........ -->
     <div class="add-book-form" id="book-form">
 
     <form id="form-itself"> 
         <h2>Add new book</h2>
-        <label id="book-name">
-        <input type="text" name="book-name" id="book-name" placeholder="Title" required>
+        <label id="bookName">
+        <input type="text" id="book-name" name="bookName" placeholder="Title" required>
     </label>
 
-        <label id="book-author">
-        <input type="text" name="book-author" id="book-author" placeholder="Author" required>
+        <label id="bookAuthor">
+        <input type="text" id="book-author" name="bookAuthor" placeholder="Author" required>
     </label>
 
-        <label id="pages-read">
-        <input type="number" name="pages-read" id="pages-read" maxlength="2000" placeholder="Pages" required> 
+        <label id="pagesRead">
+        <input type="number" id="pages-read" name="pagesRead" maxlength="2000" placeholder="Pages" required> 
     </label>
 
-    <label id="finished">Finished?
-        <input type="radio" id="yes" name="finished" value="yes"> 
+    <h3>Finished Book?</h3>
+
+    <label id="finished">Yes
+        <input type="radio" id="yes" name="finished" value="true"> 
         
     </label>
 
+    <label id="finished">No
+        <input type="radio" id="no" name="finished" value="false"> 
+        </label>
+
         <div class="empty"></div>
 
-        <input type="submit" value="Submit" name="submit">
-        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+    <button type="button" id="btn">Submit</button>
     </form>
 </div>
 
