@@ -1,7 +1,5 @@
 let myLibrary = [];
-
 let bookCard = document.getElementById('book-container')
-
 
 //constructor
 class Book {
@@ -16,7 +14,11 @@ class Book {
 }
 
 let bookLoop = function(){
+    if(myLibrary.length > 1){
+        myLibrary.shift()}
     for(i = 0; i < myLibrary.length; i++){
+        
+       
         let getBooksInOrder = myLibrary[i];
 
         bookTitle = getBooksInOrder.title;
@@ -59,7 +61,40 @@ let bookLoop = function(){
 
 
 
-function addBookToLibrary() {}
+const addBook = (e) => {
+    e.preventDefault();
+    let book = {
+        title: document.getElementById('book-name').value,
+        author: document.getElementById('book-author').value,
+        pages: document.getElementById('pages-read').value,
+        read: document.querySelector('input[name="finished"]:checked').value
+    }
+    
+    let title = book.title;
+    let author = book.author;
+    let pages = book.pages;
+    let read = book.read;
+
+   let result = new Book(title, author, pages, read)
+   myLibrary.push(result)
+   bookLoop()
+   document.forms[0].reset()
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('btn').addEventListener('click', addBook)
+});
+ 
+
+
+
+
+ // let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
+// myLibrary.push(firstBook)
+
+
+// let secondBook = new Book('Gulag', 'solcheniztyn', 200, true)
+// myLibrary.push(secondBook)
 
 
 
@@ -67,24 +102,11 @@ function addBookToLibrary() {}
 
 
 
-let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
-myLibrary.push(firstBook)
-
-
-let secondBook = new Book('Gulag', 'solcheniztyn', 200, true)
-myLibrary.push(secondBook)
 
 
 
 
 
-
-
-
-
-
-
-bookLoop()
 
 
 
@@ -100,7 +122,7 @@ const randomColor = Math.floor(Math.random()*16777215).toString(16);
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
 bookNumber = 0;
 let form = document.getElementById('book-form')
-function addBook(){
+function addBookPopup(){
     
 
     if ((form.style.display = "hidden") && (bookNumber == 0)){
@@ -126,3 +148,4 @@ document.getElementById('click-container').addEventListener("click", function(){
     bookNumber = 0;
     document.body.style.backgroundColor = "white"
 })
+
