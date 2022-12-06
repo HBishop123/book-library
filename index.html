@@ -24,8 +24,9 @@
 
 
     <div class="add-book-form" id="book-form">
-    <form action="lalala" id="form-container"> 
+    <form action="/README.md" id="form-container"> 
         <label for="book-name"></label>
+        <h2>Add new book</h2>
         <input type="text" name="name" placeholder="Title" required>
 
         <label for="book-author"></label>
@@ -36,8 +37,10 @@
 
         <label for="finished"></label>
         <input type="text" name="read" placeholder="tick" required> 
+        
+        <div class="empty"></div>
 
-        <button type="submit" class="btn">Add Book</button>
+        <button type="submit" class="btn">Submit</button>
         <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
     </form>
 </div>

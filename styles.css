@@ -53,6 +53,21 @@ header{
     height: auto;
     width: min-content;
     padding: 15px;
-    display: none;
+    display: flex;
     position: absolute;
+}
+
+#form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+#form-container > h2{
+    align-self: center;
+    padding-bottom: 10px;
+}
+  
+#form-container > .empty{
+    padding: 5px 0px 0px 0px
 }
