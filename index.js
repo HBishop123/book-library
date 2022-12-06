@@ -75,20 +75,6 @@ let secondBook = new Book('Gulag', 'solcheniztyn', 200, true)
 myLibrary.push(secondBook)
 
 
-let thirdBook = new Book('Gulag', 'solcheniztyn', 200, true)
-myLibrary.push(secondBook)
-
-
-let fourthBook = new Book('Gulag', 'solcheniztyn', 200, true)
-myLibrary.push(secondBook)
-
-
-let f1hBook = new Book('Gulag', 'solcheniztyn', 200, true)
-myLibrary.push(secondBook)
-
-
-let f2hBook = new Book('Gulag', 'solcheniztyn', 200, true)
-myLibrary.push(secondBook)
 
 
 
@@ -131,4 +117,7 @@ function closeForm(){
     bookNumber = 0;
 }
     
-
+document.getElementById('click-container').addEventListener("click", function(){
+    form.style.display = "none";
+    bookNumber = 0;
+})
