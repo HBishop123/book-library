@@ -26,20 +26,25 @@
 
 
     <div class="add-book-form" id="book-form">
-    <form action="/README.md" id="form-container"> 
-        <label for="book-name"></label>
+
+    <form id="form-container"> 
         <h2>Add new book</h2>
+        <label id="book-name">
         <input type="text" name="name" id="book-name" placeholder="Title" required>
+    </label>
 
-        <label for="book-author"></label>
+        <label id="book-author">
         <input type="text" name="author" id="book-author" placeholder="Author" required>
+    </label>
 
-        <label for="pages-read"></label>
+        <label id="pages-read">
         <input type="number" name="pages" id="pages-read" maxlength="2000" placeholder="Pages" required> 
+    </label>
 
-        <label for="finished">Finished?</label>
+    <label id="finished">Finished?
         <input type="radio" id="yes" name="yes" value="yes"> 
-        
+    </label>
+
         <div class="empty"></div>
 
         <input type="submit" value="Submit" name="submit">
