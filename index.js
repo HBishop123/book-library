@@ -1,15 +1,18 @@
 let myLibrary = [];
-let bookCard = document.getElementById('book-container')
-selectionNumber = 0;
 console.log(myLibrary)
+let bookCard = document.getElementById('book-container')
+numberUp = 0
+
+
 
 //constructor
 class Book {
-    constructor(title, author, pages, read){
+    constructor(title, author, pages, read, number){
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.read = read;
+        this.number = number
     }
 
 
@@ -75,6 +78,7 @@ let bookLoop = function(){
        wordPages.innerHTML = pagesOfBookRead;
        wordRead.innerHTML = bookFinished
 
+    
 
 }
 }
@@ -88,26 +92,31 @@ const addBook = (e) => {
         title: document.getElementById('book-name').value,
         author: document.getElementById('book-author').value,
         pages: document.getElementById('pages-read').value,
-        read: document.querySelector('input[name="finished"]:checked').value
+        read: document.querySelector('input[name="finished"]:checked').value,
     }
-    
+    numberUp++;
+
     let title = book.title;
     let author = book.author;
     let pages = book.pages;
     let read = book.read;
+    let number = numberUp
 
-   let result = new Book(title, author, pages, read)
+    
+    
+
+
+   let result = new Book(title, author, pages, read, number)
    myLibrary.push(result)
    bookLoop()
    document.forms[0].reset()
+   
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addBook)
 });
  
-
-
 
 
 
