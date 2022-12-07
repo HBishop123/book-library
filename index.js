@@ -1,17 +1,21 @@
 let myLibrary = [];
+console.log(myLibrary)
 let bookCard = document.getElementById('book-container');
 scalingNumber = 0;
+loopNumber = 0
+
+
+
 
 
 
 //constructor
 class Book {
-    constructor(title, author, pages, read, number){
+    constructor(title, author, pages, read){
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.read = read;
-        this.number = number
     }
 
 
@@ -19,7 +23,9 @@ class Book {
 
 let bookLoop = function(){
 
-    for(i = 0; i < myLibrary.length; i++){
+   for(i = loopNumber; i < myLibrary.length; i++){
+        loopNumber++
+        scalingNumber++
         
         let getBooksInOrder = myLibrary[i];
 
@@ -30,7 +36,6 @@ let bookLoop = function(){
         number = getBooksInOrder.number
 
         const card = document.createElement('div');
-        card.setAttribute('id', 'card')
         bookCard.appendChild(card);
         card.style.height = "200px"
         card.style.border = "1px solid black"
@@ -54,12 +59,10 @@ let bookLoop = function(){
         const wordRead = document.createElement('p');
         card.appendChild(wordRead)
 
-        const wordNumber = document.createElement('p');
-        card.appendChild(wordNumber)
-
 
 
         const deleteButton = document.createElement('button')
+        deleteButton.setAttribute('id', scalingNumber)
         card.appendChild(deleteButton)
         
         deleteButton.style.border = "none"
@@ -78,7 +81,9 @@ let bookLoop = function(){
        wordAuthor.innerHTML = bookAuthor;
        wordPages.innerHTML = pagesOfBookRead;
        wordRead.innerHTML = bookFinished
-       wordNumber.innerHTML = number
+       console.log(deleteButton)
+
+       
        
     
 }
@@ -89,15 +94,14 @@ let bookLoop = function(){
 
 const addBook = (e) => {
     e.preventDefault();
-    scalingNumber++
+    
     
     let book = {
-        title: document.getElementById('book-name').value,
-        author: document.getElementById('book-author').value,
-        pages: document.getElementById('pages-read').value,
-        read: document.querySelector('input[name="finished"]:checked').value,
-        number: scalingNumber
-        }
+    title: document.getElementById('book-name').value,
+    author: document.getElementById('book-author').value,
+    pages: document.getElementById('pages-read').value,
+    read: document.querySelector('input[name="finished"]:checked').value,
+}
         
     
 
@@ -105,22 +109,20 @@ const addBook = (e) => {
     let author = book.author;
     let pages = book.pages;
     let read = book.read;
-    let number = book.number
+    
 
 
 
-   let result = new Book(title, author, pages, read, number)
+   let result = new Book(title, author, pages, read)
    myLibrary.push(result)
+   bookLoop()
    document.forms[0].reset()
-   
-   while(bookCard.firstChild) {
-    bookCard.removeChild(bookCard.firstChild)
-}
-}
+   }
+
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addBook)
-    document.getElementById('btn').addEventListener('click', bookLoop)
+    
 });
  
 
