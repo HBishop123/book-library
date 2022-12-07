@@ -48,6 +48,10 @@ let bookLoop = function(){
         const wordRead = document.createElement('p');
         card.appendChild(wordRead)
 
+        const deleteButton = document.createElement('button')
+        card.appendChild(deleteButton)
+
+        deleteButton.innerHTML = "Delete"
         wordTitle.innerHTML = bookTitle;
         wordAuthor.innerHTML = bookAuthor;
         wordPages.innerHTML = pagesOfBookRead;
