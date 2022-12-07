@@ -1,5 +1,7 @@
 let myLibrary = [];
 let bookCard = document.getElementById('book-container')
+selectionNumber = 0;
+console.log(myLibrary)
 
 //constructor
 class Book {
@@ -14,8 +16,9 @@ class Book {
 }
 
 let bookLoop = function(){
-    if(myLibrary.length > 1){
-        myLibrary.shift()}
+    if(myLibrary.length >1){
+        bookCard.innerHTML = ''
+    }
     for(i = 0; i < myLibrary.length; i++){
         
        
@@ -71,10 +74,9 @@ let bookLoop = function(){
        wordAuthor.innerHTML = bookAuthor;
        wordPages.innerHTML = pagesOfBookRead;
        wordRead.innerHTML = bookFinished
-        
-        
-    
-    }
+
+
+}
 }
 
 
@@ -104,6 +106,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addBook)
 });
  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //JS for the form
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
