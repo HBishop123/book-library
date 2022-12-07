@@ -1,5 +1,4 @@
 let myLibrary = [];
-console.log(myLibrary)
 let bookCard = document.getElementById('book-container')
 numberUp = 0
 
@@ -7,12 +6,11 @@ numberUp = 0
 
 //constructor
 class Book {
-    constructor(title, author, pages, read, number){
+    constructor(title, author, pages, read){
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.read = read;
-        this.number = number
     }
 
 
@@ -94,19 +92,18 @@ const addBook = (e) => {
         pages: document.getElementById('pages-read').value,
         read: document.querySelector('input[name="finished"]:checked').value,
     }
-    numberUp++;
-
+   
     let title = book.title;
     let author = book.author;
     let pages = book.pages;
     let read = book.read;
-    let number = numberUp
+    
 
     
     
 
 
-   let result = new Book(title, author, pages, read, number)
+   let result = new Book(title, author, pages, read)
    myLibrary.push(result)
    bookLoop()
    document.forms[0].reset()
