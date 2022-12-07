@@ -1,8 +1,9 @@
 let myLibrary = [];
-console.log(myLibrary)
 let bookCard = document.getElementById('book-container');
+let header = document.querySelector('header');
 scalingNumber = 0;
 loopNumber = 0
+
 
 
 
@@ -26,7 +27,7 @@ let bookLoop = function(){
    for(i = loopNumber; i < myLibrary.length; i++){
         loopNumber++
         scalingNumber++
-        
+
         let getBooksInOrder = myLibrary[i];
 
         bookTitle = getBooksInOrder.title;
@@ -90,8 +91,6 @@ let bookLoop = function(){
 }
 
 
-
-
 const addBook = (e) => {
     e.preventDefault();
     
@@ -126,17 +125,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
  
 
-
-
-
-
-
-
-
-
-
-
-
 //JS for the form
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
 bookNumber = 0;
@@ -168,3 +156,7 @@ document.getElementById('click-container').addEventListener("click", function(){
     document.body.style.backgroundColor = "white"
 })
 
+
+bookCard.addEventListener('click', function(e) {
+   console.log(e.target)
+   })
