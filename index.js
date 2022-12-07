@@ -105,38 +105,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
  
 
-
-
-
- // let firstBook = new Book('Shawhank-Redemption', 'Stephen King', 1, false)
-// myLibrary.push(firstBook)
-
-
-// let secondBook = new Book('Gulag', 'solcheniztyn', 200, true)
-// myLibrary.push(secondBook)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// random color generator
-const randomColor = Math.floor(Math.random()*16777215).toString(16);
-
-
 //JS for the form
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
 bookNumber = 0;
