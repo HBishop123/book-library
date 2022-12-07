@@ -1,36 +1,36 @@
 let myLibrary = [];
-let bookCard = document.getElementById('book-container')
-numberUp = 0
+let bookCard = document.getElementById('book-container');
+scalingNumber = 0;
 
 
 
 //constructor
 class Book {
-    constructor(title, author, pages, read){
+    constructor(title, author, pages, read, number){
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.read = read;
+        this.number = number
     }
 
 
 }
 
 let bookLoop = function(){
-    if(myLibrary.length >1){
-        bookCard.innerHTML = ''
-    }
+
     for(i = 0; i < myLibrary.length; i++){
         
-       
         let getBooksInOrder = myLibrary[i];
 
         bookTitle = getBooksInOrder.title;
         bookAuthor = getBooksInOrder.author;
         pagesOfBookRead = getBooksInOrder.pages;
         bookFinished = getBooksInOrder.read
+        number = getBooksInOrder.number
 
         const card = document.createElement('div');
+        card.setAttribute('id', 'card')
         bookCard.appendChild(card);
         card.style.height = "200px"
         card.style.border = "1px solid black"
@@ -54,10 +54,13 @@ let bookLoop = function(){
         const wordRead = document.createElement('p');
         card.appendChild(wordRead)
 
+        const wordNumber = document.createElement('p');
+        card.appendChild(wordNumber)
+
+
+
         const deleteButton = document.createElement('button')
         card.appendChild(deleteButton)
-
-
         
         deleteButton.style.border = "none"
         deleteButton.style.alignSelf = "end"
@@ -75,9 +78,9 @@ let bookLoop = function(){
        wordAuthor.innerHTML = bookAuthor;
        wordPages.innerHTML = pagesOfBookRead;
        wordRead.innerHTML = bookFinished
-
+       wordNumber.innerHTML = number
+       
     
-
 }
 }
 
@@ -86,32 +89,38 @@ let bookLoop = function(){
 
 const addBook = (e) => {
     e.preventDefault();
+    scalingNumber++
+    
     let book = {
         title: document.getElementById('book-name').value,
         author: document.getElementById('book-author').value,
         pages: document.getElementById('pages-read').value,
         read: document.querySelector('input[name="finished"]:checked').value,
-    }
-   
+        number: scalingNumber
+        }
+        
+    
+
     let title = book.title;
     let author = book.author;
     let pages = book.pages;
     let read = book.read;
-    
-
-    
-    
+    let number = book.number
 
 
-   let result = new Book(title, author, pages, read)
+
+   let result = new Book(title, author, pages, read, number)
    myLibrary.push(result)
-   bookLoop()
    document.forms[0].reset()
    
+   while(bookCard.firstChild) {
+    bookCard.removeChild(bookCard.firstChild)
+}
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addBook)
+    document.getElementById('btn').addEventListener('click', bookLoop)
 });
  
 
