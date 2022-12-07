@@ -40,7 +40,6 @@ header{
 /* Area where one can click and remove the Add book popup */
 
 #click-container{
-    position: absolute;
     width: 100%;
     height: 80vh;
 }
