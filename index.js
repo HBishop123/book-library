@@ -34,7 +34,9 @@ let bookLoop = function(){
         card.style.flexDirection = "column"
         card.style.alignItems = "center"
         card.style.justifyContent = "space-around"
+        card.style.position = "relative"
         
+
         
         const wordTitle = document.createElement('p');
         card.appendChild(wordTitle)
@@ -51,11 +53,24 @@ let bookLoop = function(){
         const deleteButton = document.createElement('button')
         card.appendChild(deleteButton)
 
-        deleteButton.innerHTML = "Delete"
-        wordTitle.innerHTML = bookTitle;
-        wordAuthor.innerHTML = bookAuthor;
-        wordPages.innerHTML = pagesOfBookRead;
-        wordRead.innerHTML = bookFinished
+
+        
+        deleteButton.style.border = "none"
+        deleteButton.style.alignSelf = "end"
+        deleteButton.style.backgroundColor = "white"
+        deleteButton.style.position = "absolute"
+        deleteButton.style.top = "0"
+        deleteButton.style.width = "20px"
+        deleteButton.style.height = "20px"
+        deleteButton.style.display = "flex"
+        deleteButton.style.color = "red"
+        
+        
+       deleteButton.innerHTML = "x"
+       wordTitle.innerHTML = bookTitle;
+       wordAuthor.innerHTML = bookAuthor;
+       wordPages.innerHTML = pagesOfBookRead;
+       wordRead.innerHTML = bookFinished
         
         
     
