@@ -1,5 +1,6 @@
 //Array of objects for all the books
 let myLibrary = [];
+console.log(myLibrary)
 
 let bookCard = document.getElementById('book-container');
 let header = document.querySelector('header');
@@ -62,11 +63,12 @@ let bookLoop = function(){
         const wordPages = document.createElement('p');
         card.appendChild(wordPages)
         
-        const wordRead = document.createElement('p');
+        const wordRead = document.createElement('button');
         card.appendChild(wordRead)
 
         let deleteButton = document.createElement('button')
         deleteButton.setAttribute('id', scalingNumber)
+        deleteButton.className = 'deleteButton'
         card.appendChild(deleteButton)
         
         deleteButton.style.border = "none"
@@ -154,14 +156,14 @@ document.getElementById('click-container').addEventListener("click", function(){
 
 
 //This function allows you to delete a card through event delegation. if a cross button is pressed, all cards are removed and all delete buttons are removed from the DOM.
-//The correct item from myLibrary array is removed due to the id value of the cross button then both Scaling number and LoopNumber are reset,
+//The correct item from myLibrary array is removed due to the id value of the cross button being the same, then both Scaling number and LoopNumber are reset,
 // Before calling my function to loop through the myLibrary array and resubmit the cards on the page, whilst resetting the delete buttons id's so they remove the correct item in the array going forward.
 bookCard.addEventListener('click', function(e) {
     const target = e.target;
     let  allCards = document.querySelectorAll('.cardsForBooks')
     let allDeleteButtons = document.querySelectorAll('#scalingNumber')
 
-    if(target.matches('button')){
+    if(target.matches('.deleteButton')){
     allCards.forEach(e => e.remove())
     allDeleteButtons.forEach(e => e.remove())
     myLibrary.splice(target.id, 1);
