@@ -51,7 +51,7 @@ let bookLoop = function(){
         card.style.alignItems = "center"
         card.style.justifyContent = "space-around"
         card.style.position = "relative"
-        card.style.backgroundColor = "grey"
+        card.style.backgroundColor = "rgb(202, 217, 222)"
         
         
 
@@ -83,8 +83,8 @@ let bookLoop = function(){
         deleteButton.style.top = "0"
         deleteButton.style.width = "20px"
         deleteButton.style.height = "20px"
-        deleteButton.style.display = "flex"
         deleteButton.style.color = "red"
+        deleteButton.style.backgroundColor = "rgb(202, 217, 222)"
         deleteButton.style.display = "flex"
         deleteButton.style.alignItems = "center"
         deleteButton.style.justifyContent = "center"
