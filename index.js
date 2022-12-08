@@ -67,6 +67,7 @@ let bookLoop = function(){
         wordRead.className = 'readBook'
         wordRead.setAttribute('id', scalingNumber)
         card.appendChild(wordRead)
+        
 
         let deleteButton = document.createElement('button')
         deleteButton.setAttribute('id', scalingNumber)
@@ -86,9 +87,9 @@ let bookLoop = function(){
         
        deleteButton.innerHTML = "x"
        wordTitle.innerHTML = `Title: ${bookTitle}`;
-       wordAuthor.innerHTML = bookAuthor;
-       wordPages.innerHTML = pagesOfBookRead;
-       wordRead.innerHTML = bookFinished
+       wordAuthor.innerHTML = `Author: ${bookAuthor}`;
+       wordPages.innerHTML = `Length: ${pagesOfBookRead} pages`;
+       wordRead.innerHTML = bookFinished;
        
 
     
@@ -182,10 +183,18 @@ bookCard.addEventListener('click', function(e) {
 //function that changes read status of book from yes to no or vice versa.
 //It selects correct item in array by using scalingNumber id attached to the button.
 bookCard.addEventListener('click', function(e) {
+
     const target = e.target;
+    if(e.target.innerHTML == "Yes"){
+    target.value = 'Yes'}
     
+    else if(e.target.innerHTML == 'No'){
+    target.value = 'No'
+}
+
     if(target.matches('.readBook')){
         
+          
     if(target.value !== 'Yes'){
     target.innerText = 'Yes'
     target.value = 'Yes'
