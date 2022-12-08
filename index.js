@@ -186,7 +186,7 @@ bookCard.addEventListener('click', function(e) {
     
     if(target.matches('.readBook')){
         
-    if(target.value == 'No'){
+    if(target.value !== 'Yes'){
     target.innerText = 'Yes'
     target.value = 'Yes'
     let findCorrect = myLibrary[target.id]
