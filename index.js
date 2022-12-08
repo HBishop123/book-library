@@ -65,6 +65,7 @@ let bookLoop = function(){
         
         const wordRead = document.createElement('button');
         wordRead.className = 'readBook'
+        wordRead.setAttribute('id', scalingNumber)
         card.appendChild(wordRead)
 
         let deleteButton = document.createElement('button')
@@ -162,11 +163,11 @@ document.getElementById('click-container').addEventListener("click", function(){
 bookCard.addEventListener('click', function(e) {
     const target = e.target;
     let  allCards = document.querySelectorAll('.cardsForBooks')
-    let allDeleteButtons = document.querySelectorAll('#scalingNumber')
+    // let allDeleteButtons = document.querySelectorAll('#scalingNumber')
 
     if(target.matches('.deleteButton')){
     allCards.forEach(e => e.remove())
-    allDeleteButtons.forEach(e => e.remove())
+    // allDeleteButtons.forEach(e => e.remove())
     myLibrary.splice(target.id, 1);
 
     scalingNumber = -1;
@@ -178,18 +179,24 @@ bookCard.addEventListener('click', function(e) {
 }
 });
 
+//function that changes read status of book from yes to no or vice versa.
+//It selects correct item in array by using scalingNumber id attached to the button.
 bookCard.addEventListener('click', function(e) {
     const target = e.target;
-    console.log(target)
+    
     if(target.matches('.readBook')){
 
     if(target.value == 'No'){
     target.innerText = 'Yes'
     target.value = 'Yes'
-
+    let findCorrect = myLibrary[target.id]
+    findCorrect.read = 'Yes'
+    
     }else if(target.value !== 'No'){
     target.innerText = 'No'    
-    target.value = 'No'    
+    target.value = 'No'  
+    let findCorrect = myLibrary[target.id]
+    findCorrect.read = 'No'  
     }
 }
 });
