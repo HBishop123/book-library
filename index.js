@@ -51,6 +51,8 @@ let bookLoop = function(){
         card.style.alignItems = "center"
         card.style.justifyContent = "space-around"
         card.style.position = "relative"
+        card.style.backgroundColor = "grey"
+        
         
 
         
@@ -83,6 +85,9 @@ let bookLoop = function(){
         deleteButton.style.height = "20px"
         deleteButton.style.display = "flex"
         deleteButton.style.color = "red"
+        deleteButton.style.display = "flex"
+        deleteButton.style.alignItems = "center"
+        deleteButton.style.justifyContent = "center"
         
         
        deleteButton.innerHTML = "x"
@@ -187,7 +192,7 @@ bookCard.addEventListener('click', function(e) {
     const target = e.target;
     if(e.target.innerHTML == "Yes"){
     target.value = 'Yes'}
-    
+
     else if(e.target.innerHTML == 'No'){
     target.value = 'No'
 }
