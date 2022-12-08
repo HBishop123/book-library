@@ -52,6 +52,8 @@ let bookLoop = function(){
         card.style.position = "relative"
         card.style.backgroundColor = "rgb(202, 217, 222)"
         card.style.borderRadius = '10px'
+        card.style.boxShadow = "0px 4px 5px 0px rgba(0,0,0,0.75)"
+        
         
         
 
