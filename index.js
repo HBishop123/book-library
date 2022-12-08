@@ -64,6 +64,7 @@ let bookLoop = function(){
         card.appendChild(wordPages)
         
         const wordRead = document.createElement('button');
+        wordRead.className = 'readBook'
         card.appendChild(wordRead)
 
         let deleteButton = document.createElement('button')
@@ -174,5 +175,21 @@ bookCard.addEventListener('click', function(e) {
     bookLoop()
 
     
+}
+});
+
+bookCard.addEventListener('click', function(e) {
+    const target = e.target;
+    console.log(target)
+    if(target.matches('.readBook')){
+
+    if(target.value == 'No'){
+    target.innerText = 'Yes'
+    target.value = 'Yes'
+
+    }else if(target.value !== 'No'){
+    target.innerText = 'No'    
+    target.value = 'No'    
+    }
 }
 });
