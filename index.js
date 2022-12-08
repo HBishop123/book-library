@@ -1,17 +1,19 @@
+//Array of objects for all the books
 let myLibrary = [];
+
 let bookCard = document.getElementById('book-container');
 let header = document.querySelector('header');
-console.log(myLibrary)
 
-// scales with each book card thats put on the page
+
+// scales with each book card thats put on the page - is reset to -1 when a card is deleted
 scalingNumber = -1;
 
-// scales as to not duplicate book cards on page
+// scales as to not duplicate book cards on page - is reset to 0 when a card is deleted
 loopNumber = 0
 
 
 
-//constructor
+//constructor for all books
 class Book {
     constructor(title, author, pages, read){
         this.title = title;
@@ -23,6 +25,7 @@ class Book {
 
 }
 
+//this function loops through the array, and for each item, makes a card and displays the items information on the card. it also scales loopNumber & scalingNumber.
 let bookLoop = function(){
 
    for(i = loopNumber; i < myLibrary.length; i++){
@@ -88,10 +91,9 @@ let bookLoop = function(){
 }
 }
 
-
+//this function gets the information from the add-book popup, uses my constructor and pushes it to my book array before resetting the form & calling my function to loop through the array
 const addBook = (e) => {
     e.preventDefault();
-    
     
     let book = {
     title: document.getElementById('book-name').value,
@@ -99,16 +101,10 @@ const addBook = (e) => {
     pages: document.getElementById('pages-read').value,
     read: document.querySelector('input[name="finished"]:checked').value,
 }
-        
-    
-
     let title = book.title;
     let author = book.author;
     let pages = book.pages;
     let read = book.read;
-    
-
-
 
    let result = new Book(title, author, pages, read)
    myLibrary.push(result)
@@ -117,8 +113,9 @@ const addBook = (e) => {
    }
 
 
+//submits the information by calling the above addBook function 
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', addBook)
+document.getElementById('btn').addEventListener('click', addBook)
     
 });
  
@@ -155,6 +152,10 @@ document.getElementById('click-container').addEventListener("click", function(){
 })
 
 
+
+//This function allows you to delete a card through event delegation. if a cross button is pressed, all cards are removed and all delete buttons are removed from the DOM.
+//The correct item from myLibrary array is removed due to the id value of the cross button then both Scaling number and LoopNumber are reset,
+// Before calling my function to loop through the myLibrary array and resubmit the cards on the page, whilst resetting the delete buttons id's so they remove the correct item in the array going forward.
 bookCard.addEventListener('click', function(e) {
     const target = e.target;
     let  allCards = document.querySelectorAll('.cardsForBooks')
