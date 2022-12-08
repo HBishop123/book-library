@@ -45,13 +45,13 @@ let bookLoop = function(){
         card.className = 'cardsForBooks'
         bookCard.appendChild(card);
         card.style.height = "200px"
-        card.style.border = "1px solid black"
         card.style.display = "flex"
         card.style.flexDirection = "column"
         card.style.alignItems = "center"
         card.style.justifyContent = "space-around"
         card.style.position = "relative"
         card.style.backgroundColor = "rgb(202, 217, 222)"
+        card.style.borderRadius = '10px'
         
         
 
@@ -84,10 +84,11 @@ let bookLoop = function(){
         deleteButton.style.width = "20px"
         deleteButton.style.height = "20px"
         deleteButton.style.color = "red"
-        deleteButton.style.backgroundColor = "rgb(202, 217, 222)"
+        deleteButton.style.background = "none"
         deleteButton.style.display = "flex"
         deleteButton.style.alignItems = "center"
         deleteButton.style.justifyContent = "center"
+        deleteButton.style.padding = "5px 5px 0px 0px"
         
         
        deleteButton.innerHTML = "x"
