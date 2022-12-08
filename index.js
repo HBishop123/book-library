@@ -85,7 +85,7 @@ let bookLoop = function(){
         
         
        deleteButton.innerHTML = "x"
-       wordTitle.innerHTML = bookTitle;
+       wordTitle.innerHTML = `Title: ${bookTitle}`;
        wordAuthor.innerHTML = bookAuthor;
        wordPages.innerHTML = pagesOfBookRead;
        wordRead.innerHTML = bookFinished
@@ -185,7 +185,7 @@ bookCard.addEventListener('click', function(e) {
     const target = e.target;
     
     if(target.matches('.readBook')){
-
+        
     if(target.value == 'No'){
     target.innerText = 'Yes'
     target.value = 'Yes'
