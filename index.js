@@ -1,12 +1,13 @@
 let myLibrary = [];
 let bookCard = document.getElementById('book-container');
 let header = document.querySelector('header');
-scalingNumber = 0;
+console.log(myLibrary)
+
+// scales with each book card thats put on the page
+scalingNumber = -1;
+
+// scales as to not duplicate book cards on page
 loopNumber = 0
-
-
-
-
 
 
 
@@ -37,6 +38,7 @@ let bookLoop = function(){
         number = getBooksInOrder.number
 
         const card = document.createElement('div');
+        card.className = 'cardsForBooks'
         bookCard.appendChild(card);
         card.style.height = "200px"
         card.style.border = "1px solid black"
@@ -60,9 +62,7 @@ let bookLoop = function(){
         const wordRead = document.createElement('p');
         card.appendChild(wordRead)
 
-
-
-        const deleteButton = document.createElement('button')
+        let deleteButton = document.createElement('button')
         deleteButton.setAttribute('id', scalingNumber)
         card.appendChild(deleteButton)
         
@@ -82,10 +82,8 @@ let bookLoop = function(){
        wordAuthor.innerHTML = bookAuthor;
        wordPages.innerHTML = pagesOfBookRead;
        wordRead.innerHTML = bookFinished
-       console.log(deleteButton)
+       
 
-       
-       
     
 }
 }
@@ -158,5 +156,20 @@ document.getElementById('click-container').addEventListener("click", function(){
 
 
 bookCard.addEventListener('click', function(e) {
-   console.log(e.target)
-   })
+    const target = e.target;
+    let  allCards = document.querySelectorAll('.cardsForBooks')
+    let allDeleteButtons = document.querySelectorAll('#scalingNumber')
+
+    if(target.matches('button')){
+    allCards.forEach(e => e.remove())
+    allDeleteButtons.forEach(e => e.remove())
+    myLibrary.splice(target.id, 1);
+
+    scalingNumber = -1;
+    loopNumber = 0
+
+    bookLoop()
+
+    
+}
+});
