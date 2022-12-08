@@ -63,6 +63,7 @@ header{
     padding: 15px;
     display: none;
     position: absolute;
+    border-radius: 10px;
 }
 
 #form-itself{
