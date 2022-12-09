@@ -75,6 +75,12 @@ header{
     
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+
 .add-book-form{
     background-color: grey;
     height: auto;
@@ -83,7 +89,9 @@ header{
     display: none;
     position: absolute;
     border-radius: 10px;
+    animation: fadeIn 0.5s;
 }
+
 
 #form-itself{
     display: flex;
