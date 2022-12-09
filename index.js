@@ -30,11 +30,13 @@ class Book {
 let bookLoop = function(){
 
    for(i = loopNumber; i < myLibrary.length; i++){
+        //Incrementing global numbers
         loopNumber++
         scalingNumber++
 
         let getBooksInOrder = myLibrary[i];
 
+        //Grabbing values of [i] from object in array looped over 
         bookTitle = getBooksInOrder.title;
         bookAuthor = getBooksInOrder.author;
         pagesOfBookRead = getBooksInOrder.pages;
@@ -57,11 +59,7 @@ let bookLoop = function(){
         card.style.boxShadow = "0px 4px 5px 0px rgba(0,0,0,0.75)"
         card.style.padding= "10px 0px 5px 0px"
         
-        
-        
-        
-
-        
+        //Appending and creating elements for Book Card 
         const wordTitle = document.createElement('p');
         card.appendChild(wordTitle)
         
@@ -109,20 +107,20 @@ let bookLoop = function(){
         finished.style.fontSize = "1.1em"
         finished.style.fontStyle = 'italic'
 
-       //Adding HTml to the book cards
-       deleteButton.innerHTML = "x"
-       wordTitle.innerHTML = bookTitle;
-       wordAuthor.innerHTML =  bookAuthor;
-       wordPages.innerHTML = `${pagesOfBookRead} Pages`;
-       finished.innerHTML = 'Book Finished?'
-       wordRead.innerHTML = bookFinished;
+        //Adding HTML to the book cards
+        deleteButton.innerHTML = "x"
+        wordTitle.innerHTML = bookTitle;
+        wordAuthor.innerHTML =  bookAuthor;
+        wordPages.innerHTML = `${pagesOfBookRead} Pages`;
+        finished.innerHTML = 'Book Finished?'
+        wordRead.innerHTML = bookFinished;
 
-       //gives the 'Read Book?' button green or red depending on yes or no chosen
-       if(getBooksInOrder.read == "Yes"){
+        //gives the 'Read Book?' button green or red depending on yes or no chosen
+        if(getBooksInOrder.read == "Yes"){
         wordRead.style.color = 'green'
-       }else if(getBooksInOrder.read != "Yes"){
+        }else if(getBooksInOrder.read != "Yes"){
         wordRead.style.color = 'red'
-       }
+        }
 }
 }
 
