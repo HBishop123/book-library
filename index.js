@@ -57,7 +57,7 @@ let bookLoop = function(){
         card.style.backgroundColor = "rgb(202, 217, 222)"
         card.style.borderRadius = '10px'
         card.style.boxShadow = "0px 4px 5px 0px rgba(0,0,0,0.75)"
-        card.style.padding= "10px 0px 5px 0px"
+        card.style.padding= "10px 0px 10px 0px"
         
         //Appending and creating elements for Book Card 
         const wordTitle = document.createElement('p');
@@ -81,8 +81,8 @@ let bookLoop = function(){
         wordRead.style.width = "60px"
         wordRead.style.borderRadius = '5px'
         wordRead.style.border = "none"
-        
-        
+        wordRead.style.scale = "1.1"
+       
         let deleteButton = document.createElement('button')
         deleteButton.setAttribute('id', scalingNumber)
         deleteButton.className = 'deleteButton'
