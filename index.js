@@ -47,7 +47,7 @@ let bookLoop = function(){
         const card = document.createElement('div');
         card.className = 'cardsForBooks'
         bookCard.appendChild(card);
-        card.style.height = "200px"
+        card.style.height = "fit-content"
         card.style.display = "flex"
         card.style.flexDirection = "column"
         card.style.alignItems = "center"
@@ -57,7 +57,7 @@ let bookLoop = function(){
         card.style.backgroundColor = "rgb(202, 217, 222)"
         card.style.borderRadius = '10px'
         card.style.boxShadow = "0px 4px 5px 0px rgba(0,0,0,0.75)"
-        card.style.padding= "10px 0px 10px 0px"
+        card.style.padding= "10px 10px 10px 10px"
         
         //Appending and creating elements for Book Card 
         const wordTitle = document.createElement('p');
@@ -112,6 +112,11 @@ let bookLoop = function(){
         finished.style.fontSize = "1.1em"
         finished.style.fontStyle = 'italic'
 
+        wordTitle.style.wordBreak = 'break-all'
+        wordTitle.style.textAlign = "center"
+        wordAuthor.style.wordBreak = 'break-all'
+        wordAuthor.style.textAlign = "center"
+        
         //Adding HTML to the book cards
         deleteButton.innerHTML = "x"
         wordTitle.innerHTML = bookTitle;
