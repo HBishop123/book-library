@@ -77,6 +77,11 @@ let bookLoop = function(){
         wordRead.className = 'readBook'
         wordRead.setAttribute('id', scalingNumber)
         card.appendChild(wordRead)
+        wordRead.style.padding = "2px 0px 2px 0px"
+        wordRead.style.width = "60px"
+        wordRead.style.borderRadius = '5px'
+        wordRead.style.border = "none"
+        
         
         let deleteButton = document.createElement('button')
         deleteButton.setAttribute('id', scalingNumber)
