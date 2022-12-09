@@ -51,7 +51,7 @@ header{
 
 /* style regarding the form */
 
-.add-book{
+.add-book, #btn{
     border-radius: 5px;
     font-size: 0.8em;
     padding: 10px;
@@ -60,12 +60,14 @@ header{
     box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75)
 }
 
-.add-book:hover{
+.add-book:hover, #btn:hover{
     scale: 1.1;
 }
 
-.add-book:active{
+.add-book:active, #btn:active{
     scale: 1.2;
+    background-color: lightgreen;
+    
 }
 
 .add-book-form{
@@ -93,3 +95,4 @@ header{
 #form-container > .empty{
     padding: 5px 0px 0px 0px
 }
+
