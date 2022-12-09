@@ -41,6 +41,7 @@ let bookLoop = function(){
         bookFinished = getBooksInOrder.read
         number = getBooksInOrder.number
 
+        //styling for the book cards
         const card = document.createElement('div');
         card.className = 'cardsForBooks'
         bookCard.appendChild(card);
@@ -49,6 +50,7 @@ let bookLoop = function(){
         card.style.flexDirection = "column"
         card.style.alignItems = "center"
         card.style.justifyContent = "space-around"
+        card.style.gap = "5px"
         card.style.position = "relative"
         card.style.backgroundColor = "rgb(202, 217, 222)"
         card.style.borderRadius = '10px'
@@ -60,6 +62,7 @@ let bookLoop = function(){
         
         const wordTitle = document.createElement('p');
         card.appendChild(wordTitle)
+        
 
         const wordAuthor = document.createElement('p');
         card.appendChild(wordAuthor)
@@ -67,6 +70,9 @@ let bookLoop = function(){
         const wordPages = document.createElement('p');
         card.appendChild(wordPages)
         
+        const finished = document.createElement('p')
+        card.appendChild(finished)
+
         const wordRead = document.createElement('button');
         wordRead.className = 'readBook'
         wordRead.setAttribute('id', scalingNumber)
@@ -78,6 +84,7 @@ let bookLoop = function(){
         deleteButton.className = 'deleteButton'
         card.appendChild(deleteButton)
         
+        //styling for the card deleteButton
         deleteButton.style.border = "none"
         deleteButton.style.alignSelf = "end"
         deleteButton.style.backgroundColor = "white"
@@ -91,12 +98,17 @@ let bookLoop = function(){
         deleteButton.style.alignItems = "center"
         deleteButton.style.justifyContent = "center"
         deleteButton.style.padding = "5px 5px 0px 0px"
-        
+
+        //styling for the gap between pages HTML and if book is finished
+        let pagesGap = card.children
+        pagesGap.item(2).style.paddingBottom = "10px"    
+        wordPages.style.padding = "50px 0p 10px 0px"
         
        deleteButton.innerHTML = "x"
        wordTitle.innerHTML = `Title: ${bookTitle}`;
        wordAuthor.innerHTML = `Author: ${bookAuthor}`;
-       wordPages.innerHTML = `Length: ${pagesOfBookRead} pages`;
+       wordPages.innerHTML = `Length: ${pagesOfBookRead} Pages`;
+       finished.innerHTML = 'Book Finished?'
        wordRead.innerHTML = bookFinished;
        
 
