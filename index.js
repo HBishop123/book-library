@@ -39,7 +39,7 @@ let bookLoop = function(){
         bookAuthor = getBooksInOrder.author;
         pagesOfBookRead = getBooksInOrder.pages;
         bookFinished = getBooksInOrder.read
-        number = getBooksInOrder.number
+        
 
         //styling for the book cards
         const card = document.createElement('div');
@@ -55,6 +55,8 @@ let bookLoop = function(){
         card.style.backgroundColor = "rgb(202, 217, 222)"
         card.style.borderRadius = '10px'
         card.style.boxShadow = "0px 4px 5px 0px rgba(0,0,0,0.75)"
+        card.style.padding= "10px 0px 5px 0px"
+        
         
         
         
@@ -78,7 +80,6 @@ let bookLoop = function(){
         wordRead.setAttribute('id', scalingNumber)
         card.appendChild(wordRead)
         
-
         let deleteButton = document.createElement('button')
         deleteButton.setAttribute('id', scalingNumber)
         deleteButton.className = 'deleteButton'
@@ -101,18 +102,26 @@ let bookLoop = function(){
 
         //styling for the gap between pages HTML and if book is finished
         let pagesGap = card.children
-        pagesGap.item(2).style.paddingBottom = "10px"    
+        pagesGap.item(2).style.paddingBottom = "15px"    
         wordPages.style.padding = "50px 0p 10px 0px"
-        
+
+        //styling for 'Finished Book?' text
+        finished.style.fontSize = "1.1em"
+        finished.style.fontStyle = 'italic'
+
+       //Adding HTml to the book cards
        deleteButton.innerHTML = "x"
-       wordTitle.innerHTML = `Title: ${bookTitle}`;
-       wordAuthor.innerHTML = `Author: ${bookAuthor}`;
-       wordPages.innerHTML = `Length: ${pagesOfBookRead} Pages`;
+       wordTitle.innerHTML = bookTitle;
+       wordAuthor.innerHTML =  bookAuthor;
+       wordPages.innerHTML = `${pagesOfBookRead} Pages`;
        finished.innerHTML = 'Book Finished?'
        wordRead.innerHTML = bookFinished;
-       
 
-    
+       if(getBooksInOrder.read == "Yes"){
+        wordRead.style.color = 'green'
+       }else if(getBooksInOrder.read != "Yes"){
+        wordRead.style.color = 'red'
+       }
 }
 }
 
@@ -220,12 +229,14 @@ bookCard.addEventListener('click', function(e) {
     target.value = 'Yes'
     let findCorrect = myLibrary[target.id]
     findCorrect.read = 'Yes'
+    target.style.color = "green"
     
     }else if(target.value !== 'No'){
     target.innerText = 'No'    
     target.value = 'No'  
     let findCorrect = myLibrary[target.id]
-    findCorrect.read = 'No'  
+    findCorrect.read = 'No' 
+    target.style.color = "red" 
     }
 }
 });
