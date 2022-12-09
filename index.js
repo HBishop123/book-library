@@ -117,6 +117,7 @@ let bookLoop = function(){
        finished.innerHTML = 'Book Finished?'
        wordRead.innerHTML = bookFinished;
 
+       //gives the 'Read Book?' button green or red depending on yes or no chosen
        if(getBooksInOrder.read == "Yes"){
         wordRead.style.color = 'green'
        }else if(getBooksInOrder.read != "Yes"){
