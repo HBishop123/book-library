@@ -1,10 +1,9 @@
 //Array of objects for all the books
 let myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
-console.log(myLibrary)
+console.log(myLibrary);
 if (!myLibrary) {
   myLibrary = [];
 }
-
 
 let bookCard = document.getElementById("book-container");
 let header = document.querySelector("header");
@@ -157,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn").addEventListener("click", addBook);
 });
 
-
 //JS for the form
 //bookNumber allows for closing of Add Book with reclick. Function pops add book form
 bookNumber = 0;
@@ -198,10 +196,10 @@ bookCard.addEventListener("click", function (e) {
   if (target.matches(".deleteButton")) {
     allCards.forEach((e) => e.remove());
     // allDeleteButtons.forEach(e => e.remove())
-    
+
     myLibrary.splice(target.id, 1);
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
-    
+
     scalingNumber = -1;
     loopNumber = 0;
 
@@ -236,4 +234,4 @@ bookCard.addEventListener("click", function (e) {
   }
 });
 
-bookLoop()
+bookLoop();

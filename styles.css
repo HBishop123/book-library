@@ -1,120 +1,123 @@
-*{
-   box-sizing: border-box;
-   padding: 0;
-   margin: 0;
-   font-size: 24px;
-   font-family: 'Roboto', sans-serif;
-   font-weight: 600;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
 }
 
-body{
-    height: 100vh;
-    width: 100vw;
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
-header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0px 10px 0px 10px;
-    background-color: grey;
-    height: 10vh;
-    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  background-color: grey;
+  height: 10vh;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.library{
-    font-family: monospace;
-    font-size: 1.2em;
+.library {
+  font-family: monospace;
+  font-size: 1.2em;
 }
 
-.container{
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+.container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-#book-container{
-    display: grid;
-    height: 80%;
-    width: 50%;
-    padding: 0px 50px 0px 50px;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+#book-container {
+  display: grid;
+  height: 80%;
+  width: 50%;
+  padding: 0px 50px 0px 50px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 /* Area where one can click and remove the Add book popup */
 
-#click-container{
-    width: 100%;
-    height: 80vh;
-    position: fixed;
+#click-container {
+  width: 100%;
+  height: 80vh;
+  position: fixed;
 }
-
 
 /* style regarding the form */
 
-.add-book, #btn{
-    border-radius: 5px;
-    font-size: 0.8em;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75)
+.add-book,
+#btn {
+  border-radius: 5px;
+  font-size: 0.8em;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.add-book:hover, #btn:hover{
-    scale: 1.1;
+.add-book:hover,
+#btn:hover {
+  scale: 1.1;
 }
 
-.add-book:active, #btn:active{
-    scale: 1.2;
-    background-color: lightgreen;
-    
+.add-book:active,
+#btn:active {
+  scale: 1.2;
+  background-color: lightgreen;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-      to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-
-.add-book-form{
-    background-color: grey;
-    height: auto;
-    width: min-content;
-    padding: 15px;
-    display: none;
-    position: absolute;
-    border-radius: 10px;
-    animation: fadeIn 0.5s;
+.add-book-form {
+  background-color: grey;
+  height: auto;
+  width: min-content;
+  padding: 15px;
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  animation: fadeIn 0.5s;
 }
 
-
-#form-itself{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
+#form-itself {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
 }
 
-#form-container > h2{
-    align-self: center;
-    padding-bottom: 10px;
-}
-  
-#form-container > .empty{
-    padding: 5px 0px 0px 0px
+#form-container > h2 {
+  align-self: center;
+  padding-bottom: 10px;
 }
 
-input{
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
+#form-container > .empty {
+  padding: 5px 0px 0px 0px;
 }
 
-h2{
-    padding-bottom: 10px;
+input {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+
+h2 {
+  padding-bottom: 10px;
 }
