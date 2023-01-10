@@ -223,12 +223,14 @@ bookCard.addEventListener("click", function (e) {
       target.value = "Yes";
       let findCorrect = myLibrary[target.id];
       findCorrect.read = "Yes";
+      localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
       target.style.color = "green";
     } else if (target.value !== "No") {
       target.innerText = "No";
       target.value = "No";
       let findCorrect = myLibrary[target.id];
       findCorrect.read = "No";
+      localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
       target.style.color = "red";
     }
   }
