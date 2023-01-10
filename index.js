@@ -1,4 +1,5 @@
 //Array of objects for all the books
+console.log('hello console person')
 let myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
 console.log(myLibrary);
 if (!myLibrary) {
